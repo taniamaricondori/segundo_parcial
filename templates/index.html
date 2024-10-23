@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    
+    <div class="info-box">
+    <h2>SEGUNDO PARCIAL TEM-742</h2>
+    <h3>Nombre: Tania Marina Lluta Condori</h3>
+    <h3>Carnet: 10028117 L.P.</h3>
+</div>
+
+    <h1>Gestión de productos</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <a href="/nuevo_producto"><button type="button">Nuevo Producto</button></a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Descripción</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Fecha de Vencimiento</th>
+            <th>Categoría</th>
+            <th>Acciones</th>
+        </tr>
+        {% for producto in productos %}
+        <tr>
+            <td>{{ producto['id'] }}</td>
+            <td>{{ producto['nombre'] }}</td>
+            <td>{{ producto['cantidad'] }}</td>
+            <td>{{ producto['precio'] }}</td>
+            <td>{{ producto['fecha_vencimiento'] }}</td>
+            <td>{{ producto['categoria'] }}</td>
+            <td>
+                <!-- <a href="/editar/{{ producto['id'] }}">Editar</a> |
+                <a href="/eliminar/{{ producto['id'] }}">Eliminar</a> -->
+                <a href="{{ url_for('editar_producto', producto_id=producto.id) }}">Editar</a>
+                <a href="{{ url_for('eliminar_producto', producto_id=producto.id) }}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
+

@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Fondo celeste claro */
+    color: #004080; /* Texto en azul oscuro */
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #004080; /* Azul oscuro */
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.info-box {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #e0f7fa; /* Fondo celeste claro */
+    border: 2px solid #87ceeb; /* Borde azul celeste */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #87ceeb; /* Borde azul celeste */
+}
+
+th {
+    background-color: #4682b4; /* Fondo azul medio */
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    background-color: #e6f2ff; /* Fondo celeste muy claro */
+}
+
+tr:nth-child(even) {
+    background-color: #f0f8ff; /* Fondo celeste claro en filas pares */
+}
+
+a {
+    color: #004080; /* Azul oscuro para los enlaces */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+form {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #e0f7fa; /* Fondo celeste claro */
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #87ceeb; /* Borde azul celeste */
+    width: 50%;
+    margin: 0 auto; /* Centrar el formulario */
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+input, button {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #87ceeb; /* Borde azul celeste */
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4682b4; /* Botón azul medio */
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5a9bd3; /* Azul un poco más claro al pasar el mouse */
+}
+
+/* Estilo para el mensaje de error */
+.error {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 20px;
+}

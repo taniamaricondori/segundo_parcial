@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Producto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Agregar Nuevo Producto</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form action="/agregar" method="POST">
+        <label>ID: <input type="text" name="id" required></label><br>
+        <label>Nombre: <input type="text" name="nombre" required></label><br>
+        <label>Cantidad: <input type="number" name="cantidad" required></label><br>
+        <label>Precio: <input type="text" name="precio" required></label><br>
+        <label>Fecha de Vencimiento: <input type="date" name="fecha_vencimiento" required></label><br>
+        <label>Categoría: <input type="text" name="categoria" required></label><br>
+        <button type="submit">Agregar Producto</button>
+    </form>
+
+    <br>
+    <a href="/">Volver al listado de productos</a>
+</body>
+</html>
